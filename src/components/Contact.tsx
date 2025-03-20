@@ -1,5 +1,4 @@
-
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { Phone, Mail, Clock, Send } from "lucide-react";
@@ -38,18 +37,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // For GitHub Pages (static site), we'll just show a message
+    // explaining how to contact instead of simulating a form submission
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Static Site Notice",
+        description: "This is a static site. In a real implementation, this form would send an email or store data in a database.",
         variant: "default",
       });
-      setName("");
-      setEmail("");
-      setMessage("");
       setIsSubmitting(false);
-    }, 1500);
+      // We don't clear the form to allow the user to copy their message
+    }, 1000);
   };
 
   return (
@@ -64,7 +62,7 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Schedule your free 15-minute consultation or send us a message.
+            Contact us by email or phone, or fill out this form and we'll get back to you.
           </p>
         </div>
 
