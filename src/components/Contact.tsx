@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { cn } from "@/lib/utils";
-import { Phone, Mail, Clock, Send } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -9,36 +9,12 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
-  const infoRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (formRef.current) observer.observe(formRef.current);
-    if (infoRef.current) observer.observe(infoRef.current);
-
-    return () => observer.disconnect();
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     // For GitHub Pages (static site), we'll just show a message
-    // explaining how to contact instead of simulating a form submission
     setTimeout(() => {
       toast({
         title: "Static Site Notice",
@@ -46,18 +22,13 @@ const Contact = () => {
         variant: "default",
       });
       setIsSubmitting(false);
-      // We don't clear the form to allow the user to copy their message
     }, 1000);
   };
 
   return (
-    <section
-      id="contact"
-      className="py-24 px-6 md:px-12 bg-salary-50 relative"
-      ref={sectionRef}
-    >
+    <section id="contact" className="py-24 px-6 md:px-12 bg-salary-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Get in Touch
           </h2>
@@ -67,10 +38,7 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
-          <div
-            ref={formRef}
-            className="bg-white rounded-xl shadow-sm p-8 opacity-0 translate-y-10 transition-all duration-700"
-          >
+          <div className="bg-white rounded-xl shadow-sm p-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
               Send Us a Message
             </h3>
@@ -128,12 +96,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={cn(
-                  "w-full bg-salary-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center transition-all",
+                className={
                   isSubmitting
-                    ? "opacity-70 cursor-not-allowed"
-                    : "hover:bg-salary-700 hover-lift"
-                )}
+                    ? "w-full bg-salary-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center opacity-70 cursor-not-allowed"
+                    : "w-full bg-salary-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center hover:bg-salary-700"
+                }
               >
                 {isSubmitting ? (
                   <div className="flex items-center">
@@ -141,20 +108,13 @@ const Contact = () => {
                     Sending...
                   </div>
                 ) : (
-                  <>
-                    Send Message
-                    <Send size={18} className="ml-2" />
-                  </>
+                  "Send Message"
                 )}
               </button>
             </form>
           </div>
 
-          <div
-            ref={infoRef}
-            className="opacity-0 translate-y-10 transition-all duration-700"
-            style={{ transitionDelay: "200ms" }}
-          >
+          <div>
             <div className="bg-salary-600 text-white rounded-xl shadow-sm p-8 mb-8">
               <h3 className="text-xl font-semibold mb-6">Book a Call</h3>
               <p className="mb-6">
@@ -162,7 +122,7 @@ const Contact = () => {
               </p>
               <a
                 href="#"
-                className="inline-block bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors hover-lift"
+                className="inline-block bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
               >
                 Book Your Free Call
               </a>
@@ -211,26 +171,6 @@ const Contact = () => {
                     </div>
                     <div>Monday - Friday: 9AM - 6PM EST</div>
                   </div>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-8 border-t border-salary-100">
-                <div className="font-semibold text-gray-900 mb-4">
-                  Common Questions
-                </div>
-                <div className="space-y-4">
-                  {[
-                    "How soon can we start working together?",
-                    "Do you work with international clients?",
-                    "What is your success rate?",
-                  ].map((question, index) => (
-                    <div
-                      key={index}
-                      className="bg-salary-50 rounded-lg p-4 cursor-pointer hover:bg-salary-100 transition-colors"
-                    >
-                      {question}
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

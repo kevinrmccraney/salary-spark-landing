@@ -1,6 +1,4 @@
 
-import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
 import { Award, Briefcase, HandCoins, Users } from "lucide-react";
 
 const stats = [
@@ -27,38 +25,10 @@ const stats = [
 ];
 
 const About = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (contentRef.current) observer.observe(contentRef.current);
-    if (statsRef.current) observer.observe(statsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="about"
-      className="py-24 px-6 md:px-12 bg-white relative"
-      ref={sectionRef}
-    >
+    <section id="about" className="py-24 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 opacity-0 translate-y-10 transition-all duration-700">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             About SalaryPro
           </h2>
@@ -68,10 +38,7 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div
-            ref={contentRef}
-            className="opacity-0 translate-y-10 transition-all duration-700"
-          >
+          <div>
             <div className="space-y-6 text-gray-700">
               <p>
                 Founded by former hiring managers and HR professionals, SalaryPro brings insider knowledge to the negotiation table. Our team has sat on both sides of the salary discussion, giving us unique insights into what works—and what doesn't.
@@ -94,21 +61,16 @@ const About = () => {
             </div>
           </div>
 
-          <div
-            ref={statsRef}
-            className="bg-white rounded-xl shadow-sm border border-salary-100 p-8 opacity-0 translate-y-10 transition-all duration-700"
-            style={{ transitionDelay: "200ms" }}
-          >
+          <div className="bg-white rounded-xl shadow-sm border border-salary-100 p-8">
             <div className="grid grid-cols-2 gap-8">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={cn(
-                    "text-center p-6 rounded-lg",
+                  className={
                     index === 0
-                      ? "bg-salary-600 text-white"
-                      : "bg-salary-50 text-gray-900"
-                  )}
+                      ? "text-center p-6 rounded-lg bg-salary-600 text-white"
+                      : "text-center p-6 rounded-lg bg-salary-50 text-gray-900"
+                  }
                 >
                   <div className="flex justify-center mb-3">
                     {index === 0 ? (
@@ -118,18 +80,20 @@ const About = () => {
                     )}
                   </div>
                   <div
-                    className={cn(
-                      "text-2xl md:text-3xl font-bold mb-1",
-                      index === 0 ? "text-white" : "text-salary-800"
-                    )}
+                    className={
+                      index === 0 
+                        ? "text-2xl md:text-3xl font-bold mb-1 text-white" 
+                        : "text-2xl md:text-3xl font-bold mb-1 text-salary-800"
+                    }
                   >
                     {stat.value}
                   </div>
                   <div
-                    className={cn(
-                      "text-sm",
-                      index === 0 ? "text-salary-100" : "text-gray-600"
-                    )}
+                    className={
+                      index === 0 
+                        ? "text-sm text-salary-100" 
+                        : "text-sm text-gray-600"
+                    }
                   >
                     {stat.label}
                   </div>

@@ -1,6 +1,4 @@
 
-import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
 import { HandCoins, BarChart3, HeartHandshake, GraduationCap } from "lucide-react";
 
 const services = [
@@ -31,37 +29,10 @@ const services = [
 ];
 
 const Services = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-            entry.target.classList.remove("opacity-0", "translate-y-10");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    cardRefs.current.forEach((card) => {
-      if (card) observer.observe(card);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="services" className="py-24 px-6 md:px-12 bg-white relative">
-      <div className="max-w-7xl mx-auto" ref={sectionRef}>
-        <div className="text-center mb-16 opacity-0 translate-y-10 transition-all duration-700">
+    <section id="services" className="py-24 px-6 md:px-12 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Services
           </h2>
@@ -70,22 +41,17 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-              className={cn(
-                "bg-white rounded-xl p-8 shadow-sm border border-salary-100 hover:shadow-md transition-all duration-300 opacity-0 translate-y-10",
-                "hover:border-salary-200 hover-lift"
-              )}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              className="bg-white rounded-xl p-8 shadow-sm border border-salary-100 hover:shadow-md transition-all duration-300 hover:border-salary-200"
             >
               <div className="mb-5">{service.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-6 min-h-[80px]">
+              <p className="text-gray-600 mb-6">
                 {service.description}
               </p>
               <div className="space-y-2">
@@ -100,10 +66,10 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: "400ms" }}>
+        <div className="mt-16 text-center">
           <a
             href="#contact"
-            className="inline-block bg-salary-600 hover:bg-salary-700 text-white px-6 py-3 rounded-full font-medium shadow-sm hover:shadow transition-all hover-lift"
+            className="inline-block bg-salary-600 hover:bg-salary-700 text-white px-6 py-3 rounded-full font-medium shadow-sm"
           >
             Schedule Your Free Consultation
           </a>
