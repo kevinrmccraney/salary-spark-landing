@@ -2,6 +2,13 @@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, Clock } from "lucide-react";
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -10,6 +17,25 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  useEffect(() => {
+    // Add Calendly scripts
+    const link = document.createElement('link');
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -23,6 +49,17 @@ const Contact = () => {
       });
       setIsSubmitting(false);
     }, 1000);
+  };
+
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1'
+      });
+    } else {
+      window.open('https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1', '_blank');
+    }
   };
 
   return (
@@ -122,6 +159,7 @@ const Contact = () => {
               </p>
               <a
                 href="#"
+                onClick={openCalendly}
                 className="inline-block bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
               >
                 Book Your Free Call

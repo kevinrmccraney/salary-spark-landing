@@ -2,7 +2,24 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 const Footer = () => {
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1'
+      });
+    } else {
+      window.open('https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1', '_blank');
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -70,8 +87,8 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white text-sm">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
-                Sitemap
+              <a href="#" className="text-gray-400 hover:text-white text-sm" onClick={openCalendly}>
+                Book a Call
               </a>
             </div>
           </div>

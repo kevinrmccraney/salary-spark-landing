@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,6 +31,17 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
+    }
+  };
+
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1'
+      });
+    } else {
+      window.open('https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1', '_blank');
     }
   };
 
@@ -72,12 +89,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#"
             className="bg-salary-600 hover:bg-salary-700 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm hover:shadow"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}
+            onClick={openCalendly}
           >
             Book a Call
           </a>
@@ -115,12 +129,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#"
             className="bg-salary-600 hover:bg-salary-700 text-white px-5 py-3 rounded-full font-medium text-center shadow-sm"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}
+            onClick={openCalendly}
           >
             Book a Call
           </a>
