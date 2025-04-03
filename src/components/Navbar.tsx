@@ -53,7 +53,7 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          SalaryPro
+          Seattle Salary Negotiation
         </a>
 
         {/* Desktop navigation */}

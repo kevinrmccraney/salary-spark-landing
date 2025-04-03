@@ -7,7 +7,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            About SalaryPro
+            About Seattle Salary Negotiation
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We've been helping professionals maximize their compensation for over a decade.
@@ -17,7 +17,7 @@ const About = () => {
         <div className="space-y-8 max-w-3xl mx-auto">
           <div className="space-y-6 text-gray-700">
             <p>
-              Founded by former hiring managers and HR professionals, SalaryPro brings insider knowledge to the negotiation table. Our team has sat on both sides of the salary discussion, giving us unique insights into what works—and what doesn't.
+              Founded by former hiring managers and HR professionals, Seattle Salary Negotiation brings insider knowledge to the negotiation table. Our team has sat on both sides of the salary discussion, giving us unique insights into what works—and what doesn't.
             </p>
             <p>
               We believe that proper compensation isn't just about money—it's about recognizing your true value. Our data-driven approach combines industry research with personalized coaching to help you negotiate with confidence.

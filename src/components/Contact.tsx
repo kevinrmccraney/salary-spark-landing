@@ -140,10 +140,10 @@ const Contact = () => {
                   <div>
                     <div className="text-sm text-gray-600 mb-1">Email</div>
                     <a
-                      href="mailto:hello@salarypro.com"
+                      href="mailto:hello@seattlesalarynegotiation.com"
                       className="text-salary-700 hover:text-salary-800"
                     >
-                      hello@salarypro.com
+                      hello@seattlesalarynegotiation.com
                     </a>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                     <div className="text-sm text-gray-600 mb-1">
                       Business Hours
                     </div>
-                    <div>Monday - Friday: 9AM - 6PM EST</div>
+                    <div>Monday - Friday: 9AM - 6PM PST</div>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="space-y-4">
-            <div className="text-xl font-semibold mb-4">SalaryPro</div>
+            <div className="text-xl font-semibold mb-4">Seattle Salary Negotiation</div>
             <p className="text-gray-400 max-w-xs">
               Helping professionals negotiate better compensation packages since 2013.
             </p>
@@ -61,7 +61,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 mb-4 md:mb-0">
-              © {new Date().getFullYear()} SalaryPro. All rights reserved.
+              © {new Date().getFullYear()} Seattle Salary Negotiation. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-white text-sm">
