@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="space-y-4">
             <div className="text-xl font-semibold mb-4">SalaryPro</div>
             <p className="text-gray-400 max-w-xs">
@@ -25,44 +25,6 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-          </div>
-
-          <div>
-            <div className="text-lg font-medium mb-4">Services</div>
-            <ul className="space-y-3">
-              {[
-                "Salary Negotiation",
-                "Compensation Analysis",
-                "Offer Review",
-                "Career Planning",
-                "Interview Coaching"
-              ].map((service, index) => (
-                <li key={index}>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors">
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-lg font-medium mb-4">Resources</div>
-            <ul className="space-y-3">
-              {[
-                "Salary Guides",
-                "Negotiation Scripts",
-                "Industry Reports",
-                "Case Studies",
-                "FAQ"
-              ].map((resource, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {resource}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
