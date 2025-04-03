@@ -20,11 +20,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "services" },
+    { name: "Testimonials", href: "testimonials" },
+    { name: "About", href: "about" },
+    { name: "Contact", href: "contact" },
   ];
 
   return (
@@ -40,6 +48,10 @@ const Navbar = () => {
         <a
           href="#"
           className="text-salary-800 font-semibold text-xl md:text-2xl"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         >
           SalaryPro
         </a>
@@ -49,8 +61,12 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.href}`}
               className="text-gray-700 hover:text-salary-600 font-medium transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.href);
+              }}
             >
               {link.name}
             </a>
@@ -58,6 +74,10 @@ const Navbar = () => {
           <a
             href="#contact"
             className="bg-salary-600 hover:bg-salary-700 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-sm hover:shadow"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
           >
             Book a Call
           </a>
@@ -84,9 +104,12 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.href}`}
               className="text-gray-800 hover:text-salary-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.href);
+              }}
             >
               {link.name}
             </a>
@@ -94,7 +117,10 @@ const Navbar = () => {
           <a
             href="#contact"
             className="bg-salary-600 hover:bg-salary-700 text-white px-5 py-3 rounded-full font-medium text-center shadow-sm"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
           >
             Book a Call
           </a>
