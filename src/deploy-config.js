@@ -4,9 +4,9 @@
 
 module.exports = {
   // Configure your GitHub repository information here
-  repository: "github-username/repository-name", // Replace with your actual GitHub username/repo
-  branch: "gh-pages",
+  repository: "kevinrmccraney/salary-spark-landing", // Replace with your actual GitHub username/repo
+  branch: "main",
   
   // If you have a custom domain, uncomment and set it here
-  // customDomain: "seattlesalarynegotiation.com"
+  customDomain: "seattlesalarynegotiation.com"
 };
