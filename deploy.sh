@@ -33,10 +33,11 @@ This site is configured to be deployed to GitHub Pages.
 
 echo "Site built and ready for GitHub Pages deployment!"
 
-# Uncomment the following lines to automatically commit and push to the gh-pages branch
-# git init
-# git add -A
-# git commit -m 'deploy'
+git init
+git add -A
+git commit -m 'deploy'
+
+# Uncomment the following line and replace with your GitHub repo url
 # git push -f git@github.com:username/repository-name.git master:gh-pages
 
 cd -
