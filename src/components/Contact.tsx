@@ -57,6 +57,19 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div className="bg-salary-600 text-white rounded-xl shadow-sm p-8">
+            <h3 className="text-xl font-semibold mb-6">Book a Call</h3>
+            <p className="mb-6">
+              Schedule a free 15-minute consultation to discuss your needs and how we can help.
+            </p>
+            <Button
+              onClick={openCalendly}
+              className="bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
+            >
+              Book Your Free Call
+            </Button>
+          </div>
+
           <div className="bg-white rounded-xl shadow-sm p-8 flex flex-col items-center justify-center text-center">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
               Send Us an Email
@@ -72,68 +85,6 @@ const Contact = () => {
               >
                 Contact Us <ArrowRight className="ml-2 h-5 w-5" />
               </a>
-            </div>
-          </div>
-
-          <div>
-            <div className="bg-salary-600 text-white rounded-xl shadow-sm p-8 mb-8">
-              <h3 className="text-xl font-semibold mb-6">Book a Call</h3>
-              <p className="mb-6">
-                Schedule a free 15-minute consultation to discuss your needs and how we can help.
-              </p>
-              <Button
-                onClick={openCalendly}
-                className="bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
-              >
-                Book Your Free Call
-              </Button>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-sm p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-salary-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Mail className="h-5 w-5 text-salary-700" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Email</div>
-                    <a
-                      href="mailto:kevinrmccraney@gmail.com"
-                      className="text-salary-700 hover:text-salary-800"
-                    >
-                      kevinrmccraney@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-salary-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Phone className="h-5 w-5 text-salary-700" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Phone</div>
-                    <a
-                      href="tel:+11234567890"
-                      className="text-salary-700 hover:text-salary-800"
-                    >
-                      +1 (123) 456-7890
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="h-10 w-10 rounded-full bg-salary-100 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Clock className="h-5 w-5 text-salary-700" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">
-                      Business Hours
-                    </div>
-                    <div>Monday - Friday: 9AM - 6PM PST</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
