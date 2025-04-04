@@ -75,12 +75,6 @@ const Footer = () => {
               © {new Date().getFullYear()} Seattle Salary Negotiation. All rights reserved.
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">
-                Terms of Service
-              </a>
               <a href="#" className="text-gray-400 hover:text-white text-sm" onClick={openCalendly}>
                 Book a Call
               </a>
