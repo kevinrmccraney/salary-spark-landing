@@ -11,7 +11,7 @@ npm run build
 cd dist
 
 # if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+echo 'seattlesalarynegotiation.com' > CNAME
 
 # create a .nojekyll file to bypass GitHub Pages processing
 touch .nojekyll
@@ -32,7 +32,7 @@ This site is configured to be deployed to GitHub Pages.
 
 echo "Site built and ready for GitHub Pages deployment!"
 
-# Uncomment to automatically commit and push to the gh-pages branch
+# Uncomment the following lines to automatically commit and push to the gh-pages branch
 # git init
 # git add -A
 # git commit -m 'deploy'
