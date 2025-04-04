@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
+import { Button } from "./ui/button";
 
 declare global {
   interface Window {
@@ -11,12 +12,8 @@ declare global {
 }
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-
+  
   useEffect(() => {
     // Add Calendly scripts
     const link = document.createElement('link');
@@ -35,21 +32,6 @@ const Contact = () => {
       document.body.removeChild(script);
     };
   }, []);
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // For GitHub Pages (static site), we'll just show a message
-    setTimeout(() => {
-      toast({
-        title: "Static Site Notice",
-        description: "This is a static site. In a real implementation, this form would send an email or store data in a database.",
-        variant: "default",
-      });
-      setIsSubmitting(false);
-    }, 1000);
-  };
 
   const openCalendly = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -70,85 +52,27 @@ const Contact = () => {
             Get in Touch
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Contact us by email or phone, or fill out this form and we'll get back to you.
+            Contact us by email or schedule a call. We'd love to hear from you.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
-          <div className="bg-white rounded-xl shadow-sm p-8">
+          <div className="bg-white rounded-xl shadow-sm p-8 flex flex-col items-center justify-center text-center">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
-              Send Us a Message
+              Send Us an Email
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Your Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-salary-500 focus:border-transparent"
-                  placeholder="John Smith"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Email Address
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-salary-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-salary-500 focus:border-transparent min-h-[120px]"
-                  placeholder="Tell us about your situation..."
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={
-                  isSubmitting
-                    ? "w-full bg-salary-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center opacity-70 cursor-not-allowed"
-                    : "w-full bg-salary-600 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center justify-center hover:bg-salary-700"
-                }
+            <div className="mb-8">
+              <p className="text-gray-600 mb-6">
+                Have questions or want to discuss how we can help with your salary negotiation?
+                Reach out directly via email, and we'll get back to you as soon as possible.
+              </p>
+              <a 
+                href="mailto:kevinrmccraney@gmail.com" 
+                className="inline-flex items-center bg-salary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-salary-700 transition-colors"
               >
-                {isSubmitting ? (
-                  <div className="flex items-center">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                    Sending...
-                  </div>
-                ) : (
-                  "Send Message"
-                )}
-              </button>
-            </form>
+                Contact Us <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -157,13 +81,12 @@ const Contact = () => {
               <p className="mb-6">
                 Schedule a free 15-minute consultation to discuss your needs and how we can help.
               </p>
-              <a
-                href="#"
+              <Button
                 onClick={openCalendly}
-                className="inline-block bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
+                className="bg-white text-salary-800 px-6 py-3 rounded-lg font-medium hover:bg-salary-100 transition-colors"
               >
                 Book Your Free Call
-              </a>
+              </Button>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm p-8">
@@ -178,10 +101,10 @@ const Contact = () => {
                   <div>
                     <div className="text-sm text-gray-600 mb-1">Email</div>
                     <a
-                      href="mailto:hello@seattlesalarynegotiation.com"
+                      href="mailto:kevinrmccraney@gmail.com"
                       className="text-salary-700 hover:text-salary-800"
                     >
-                      hello@seattlesalarynegotiation.com
+                      kevinrmccraney@gmail.com
                     </a>
                   </div>
                 </div>

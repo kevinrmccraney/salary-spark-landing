@@ -45,33 +45,27 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="text-lg font-medium mb-4">Subscribe</div>
+            <div className="text-lg font-medium mb-4">Contact Us</div>
             <p className="text-gray-400 mb-4">
-              Get our latest negotiation tips and industry insights.
+              Have questions or want to discuss how we can help you?
             </p>
-            <form className="space-y-2">
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="w-full bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-salary-500"
-                  required
-                />
-                <button
-                  type="submit"
-                  className={cn(
-                    "absolute right-1.5 top-1.5 h-9 w-9 flex items-center justify-center",
-                    "bg-salary-600 rounded-md hover:bg-salary-700 transition-colors"
-                  )}
-                  aria-label="Subscribe"
-                >
-                  <ArrowRight size={18} />
-                </button>
-              </div>
-              <p className="text-xs text-gray-500">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </form>
+            <div className="flex flex-col space-y-4">
+              <a 
+                href="mailto:kevinrmccraney@gmail.com" 
+                className="inline-flex items-center text-white hover:text-salary-400 transition-colors"
+              >
+                <ArrowRight className="mr-2 h-5 w-5" />
+                kevinrmccraney@gmail.com
+              </a>
+              <a 
+                href="#" 
+                onClick={openCalendly}
+                className="inline-flex items-center text-white hover:text-salary-400 transition-colors"
+              >
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Book a Free Consultation
+              </a>
+            </div>
           </div>
         </div>
 
