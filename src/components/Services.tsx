@@ -6,13 +6,13 @@ const services = [
     icon: <HandCoins className="h-10 w-10 text-salary-600" />,
     title: "Salary Negotiation Coaching",
     description: "One-on-one coaching to prepare you for all aspects of the negotiation process, from initial offer to final agreement.",
-    includes: ["Personalized strategy", "Script preparation", "Role-playing practice", "Unlimited email support"]
+    includes: ["Personalized strategy", "Script preparation", "Role-playing practice", "Eemail support"]
   },
   {
     icon: <BarChart3 className="h-10 w-10 text-salary-600" />,
     title: "Compensation Analysis",
     description: "Get detailed insights into market rates for your skills, experience, and location to ensure you know your true value.",
-    includes: ["Custom market research", "Compensation benchmarking", "Benefits valuation", "Total package assessment"]
+    includes: ["Market research", "Compensation benchmarking", "Benefits valuation", "Total package assessment"]
   },
   {
     icon: <HeartHandshake className="h-10 w-10 text-salary-600" />,

@@ -32,7 +32,7 @@ const Hero = () => {
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-salary-100">
               <h2 className="text-2xl font-bold text-salary-800 mb-4">Ready to maximize your worth?</h2>
               <p className="text-gray-600 mb-6">
-                Our expert negotiators have helped thousands of professionals just like you secure better compensation packages.
+                Our expert negotiators have helped professionals just like you secure better compensation packages.
               </p>
               <ul className="space-y-3 mb-6">
                 {[

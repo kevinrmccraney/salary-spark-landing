@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="text-xl font-semibold mb-4">Seattle Salary Negotiation</div>
             <p className="text-gray-400 max-w-xs">
-              Helping professionals negotiate better compensation packages since 2013.
+            Hands-on negotiation coaching to get you a higher salary. That's it.
             </p>
             <div className="flex space-x-4">
               {/* Social media icons would go here */}
@@ -51,11 +51,11 @@ const Footer = () => {
             </p>
             <div className="flex flex-col space-y-4">
               <a 
-                href="mailto:kevinrmccraney@gmail.com" 
+                href="mailto:hello@seattlesalarynegotiation.com" 
                 className="inline-flex items-center text-white hover:text-salary-400 transition-colors"
               >
                 <ArrowRight className="mr-2 h-5 w-5" />
-                kevinrmccraney@gmail.com
+                hello@seattlesalarynegotiation.com
               </a>
               <a 
                 href="#" 

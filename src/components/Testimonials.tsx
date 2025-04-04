@@ -4,32 +4,25 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Working with SalaryPro increased my job offer by $25,000. Their approach gave me the confidence to ask for what I'm worth.",
-    name: "Sarah J.",
-    role: "Product Manager",
+    quote: "We went back and forth for about two days and eventually negotiated a substantial total compensation increase from my previous position.",
+    name: "Sarah M.",
+    role: "Software Developer",
     company: "Tech Industry",
-    increase: "+28%"
+    increase: "+40%"
   },
   {
-    quote: "I was about to accept my first offer when a friend recommended SalaryPro. Their guidance helped me negotiate an additional $18K plus better benefits.",
-    name: "Michael T.",
-    role: "Software Engineer",
+    quote: "[SSN] helped me review a prospective job offer and come up with a template to counter the offer. [They] provided communication strategies targeted to increase the starting salary, bonus, and stock with the recruiter. Ultimately, [SSN] provided me with the tools to negotiate and secure a 7% increase in total compensation.",
+    name: "Tiffany K.",
+    role: "UX Researcher",
     company: "Startup",
-    increase: "+22%"
+    increase: "+7%"
   },
   {
-    quote: "The personalized coaching and practice sessions were invaluable. I secured a compensation package that was 15% higher than initially offered.",
-    name: "Elena R.",
-    role: "Marketing Director",
-    company: "E-commerce",
-    increase: "+15%"
-  },
-  {
-    quote: "As someone who hates negotiating, SalaryPro gave me the tools and confidence to successfully ask for more. Highly recommend their services.",
-    name: "David L.",
-    role: "Finance Manager",
-    company: "Banking",
-    increase: "+19%"
+    quote: "[SSN] helped me navigate a complex international negotiation and ultimately helped me win several thousand dollars as part of my signing bonus, and a more substantial portion of my salary in USD.",
+    name: "James K.",
+    role: "Professor",
+    company: "Foreign University",
+    increase: "+11%"
   }
 ];
 

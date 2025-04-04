@@ -80,7 +80,7 @@ const Contact = () => {
                 Reach out directly via email, and we'll get back to you as soon as possible.
               </p>
               <a 
-                href="mailto:kevinrmccraney@gmail.com" 
+                href="mailto:hello@seattlesalarynegotiation.com" 
                 className="inline-flex items-center bg-salary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-salary-700 transition-colors"
               >
                 Contact Us <ArrowRight className="ml-2 h-5 w-5" />
