@@ -11,7 +11,6 @@ npm run build
 cd dist
 
 # if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
 echo 'seattlesalarynegotiation.com' > CNAME
 
 # create a .nojekyll file to bypass GitHub Pages processing
@@ -27,17 +26,13 @@ This is a static landing page for a salary negotiation consultancy. Built with R
 This site is configured to be deployed to GitHub Pages.
 
 1. Fork this repository
-2. Update your repository settings to enable GitHub Pages from the 'dist' folder on the 'master' branch
+2. Update your repository settings to enable GitHub Pages from the 'dist' folder on the 'main' branch
 3. Run \`npm install\` and then \`npm run deploy\` to build and push to GitHub Pages
 " > README.md
 
 echo "Site built and ready for GitHub Pages deployment!"
 
-git init
-git add -A
-git commit -m 'deploy'
-
-# Uncomment the following line and replace with your GitHub repo url
-# git push -f git@github.com:username/repository-name.git master:gh-pages
+# The following steps are handled by gh-pages package now
+# We're not doing git commands directly in this script anymore
 
 cd -

@@ -5,8 +5,8 @@
 module.exports = {
   // Configure your GitHub repository information here
   repository: "kevinrmccraney/salary-spark-landing", // Replace with your actual GitHub username/repo
-  branch: "main",
+  branch: "main", // Deploy to main branch
   
-  // If you have a custom domain, uncomment and set it here
+  // Custom domain configuration
   customDomain: "seattlesalarynegotiation.com"
 };
