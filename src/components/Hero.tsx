@@ -16,7 +16,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl text-gray-600 mb-8">
-              We've helped professionals increase their offers substantially, sometimes almost 50%. 
+              We've helped professionals increase their offers substantially. 
               Don't leave money on the table.
             </p>
             
