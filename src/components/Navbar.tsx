@@ -38,10 +38,10 @@ const Navbar = () => {
     e.preventDefault();
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1'
+        url: 'https://calendly.com/k11m13/salary-negotiation-initial-call?hide_event_type_details=1&hide_gdpr_banner=1'
       });
     } else {
-      window.open('https://calendly.com/k11m13/15min?hide_event_type_details=1&hide_gdpr_banner=1', '_blank');
+      window.open('https://calendly.com/k11m13/salary-negotiation-initial-call?hide_event_type_details=1&hide_gdpr_banner=1', '_blank');
     }
   };
 
