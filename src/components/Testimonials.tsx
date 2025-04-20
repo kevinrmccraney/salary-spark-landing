@@ -18,6 +18,13 @@ const testimonials = [
     increase: "+7%"
   },
   {
+    quote: "I couldn’t have gotten through negotiating my very first job without [SSN]. [SSN] helped me prioritize what I valued the most in my “total job package,” which was designated professional development funds. Mock practice conversations also helped me build my confidence and look forward to a negotiation conversation, framing as a way to start my job on a positive note.",
+    name: "Alex Y.",
+    role: "Administration",
+    company: "Higher Education",
+    increase: "+5%"
+  },
+  {
     quote: "[SSN] helped me navigate a complex international negotiation and ultimately helped me win several thousand dollars as part of my signing bonus, and a more substantial portion of my salary in USD.",
     name: "James K.",
     role: "Professor",
